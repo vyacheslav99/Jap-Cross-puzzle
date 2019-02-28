@@ -1,0 +1,102 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{59067aa6-92b5-4253-9725-09106a354683}</ProjectGuid>
+    <MainSource>jpz.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>jpz.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_UnitSearchPath>..\common;units;tests</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\common;units;tests</DCC_ResourcePath>
+    <DCC_ObjPath>..\common;units;tests</DCC_ObjPath>
+    <DCC_IncludePath>..\common;units;tests</DCC_IncludePath>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_UnitSearchPath>..\common;units;tests</DCC_UnitSearchPath>
+    <DCC_ResourcePath>..\common;units;tests</DCC_ResourcePath>
+    <DCC_ObjPath>..\common;units;tests</DCC_ObjPath>
+    <DCC_IncludePath>..\common;units;tests</DCC_IncludePath>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">4</VersionInfo><VersionInfo Name="MinorVer">1</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1049</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">ViSla</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Японский кроссворд (цв. и ч-б). Судоку</VersionInfoKeys><VersionInfoKeys Name="FileVersion">4.1.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName">Японский кроссворд</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename">jpz.exe</VersionInfoKeys><VersionInfoKeys Name="ProductName">Японский кроссворд</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">4.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">jpz.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="jpz.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="units\about.pas">
+      <Form>fAbout</Form>
+    </DCCReference>
+    <DCCReference Include="units\cpuzzle.pas">
+      <Form>fmPrompt</Form>
+    </DCCReference>
+    <DCCReference Include="units\frmCCPuzzle.pas">
+      <Form>FmCCrossPuzzle</Form>
+    </DCCReference>
+    <DCCReference Include="units\frmCommon.pas">
+      <Form>CommonFrame</Form>
+    </DCCReference>
+    <DCCReference Include="units\frmJCPuzzle.pas">
+      <Form>FmJCrossPuzzle</Form>
+    </DCCReference>
+    <DCCReference Include="units\frmSudoku.pas">
+      <Form>FmSudoku</Form>
+    </DCCReference>
+    <DCCReference Include="units\GifImage.pas" />
+    <DCCReference Include="units\help.pas">
+      <Form>frmHelp</Form>
+    </DCCReference>
+    <DCCReference Include="units\imgUtils.pas" />
+    <DCCReference Include="units\InputSize.pas">
+      <Form>frmInputSize</Form>
+    </DCCReference>
+    <DCCReference Include="units\jsCommon.pas" />
+    <DCCReference Include="units\main.pas">
+      <Form>frmMain</Form>
+    </DCCReference>
+    <DCCReference Include="units\NewSudoku.pas">
+      <Form>fNewSudoku</Form>
+    </DCCReference>
+    <DCCReference Include="units\pgrid.pas" />
+    <DCCReference Include="units\propertys.pas">
+      <Form>FProps</Form>
+    </DCCReference>
+    <DCCReference Include="units\puzzle.pas">
+      <Form>fPrompt</Form>
+    </DCCReference>
+    <DCCReference Include="units\Records.pas">
+      <Form>frmRecords</Form>
+    </DCCReference>
+    <DCCReference Include="units\selbox.pas">
+      <Form>fSelectBox</Form>
+    </DCCReference>
+    <DCCReference Include="units\select_puzzle.pas">
+      <Form>frmOpenPuzzle</Form>
+    </DCCReference>
+    <DCCReference Include="units\settings.pas">
+      <Form>frmSettings</Form>
+    </DCCReference>
+    <DCCReference Include="units\splash.pas">
+      <Form>fSplash</Form>
+    </DCCReference>
+    <DCCReference Include="units\sudoku.pas">
+      <Form>frmPrompt</Form>
+    </DCCReference>
+    <DCCReference Include="units\toolbox.pas">
+      <Form>FToolBox</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

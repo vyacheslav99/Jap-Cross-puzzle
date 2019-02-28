@@ -1,0 +1,10 @@
+__history
+__history/
+save
+save/
+*.dcu
+*.exe
+*.identcache
+*.dproj.local
+*.ini
+statx.dat
