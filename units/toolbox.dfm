@@ -180,17 +180,15 @@ object FToolBox: TFToolBox
       TabOrder = 8
       OnChange = trbLightnessChange
     end
-    object edLightnessBorder: TJvSpinEdit
+    object edLightnessBorder: TSpinEdit
       Left = 246
       Top = 173
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      Decimal = 0
-      MaxValue = 255.000000000000000000
-      MinValue = 1.000000000000000000
-      Value = 1.000000000000000000
+      Height = 22
+      MaxValue = 255
+      MinValue = 1
       TabOrder = 7
+      Value = 1
       OnChange = edLightnessBorderChange
     end
   end
@@ -243,27 +241,29 @@ object FToolBox: TFToolBox
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      ItemHeight = 13
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       Items.Strings = (
         #1084#1086#1085#1086
         '16 '#1094#1074#1077#1090#1086#1074
         '256 '#1094#1074#1077#1090#1086#1074
         '32 '#1073#1080#1090#1072)
     end
-    object edGammaCoeff: TJvSpinEdit
+    object edGammaCoeff: TDBNumberEditEh
       Left = 218
       Top = 3
       Width = 78
       Height = 21
-      Alignment = taRightJustify
-      Decimal = 3
+      DecimalPlaces = 3
+      DynProps = <>
+      EditButton.Style = ebsUpDownEh
+      EditButton.Visible = True
+      EditButtons = <>
       MaxValue = 10.000000000000000000
       MinValue = -10.000000000000000000
-      ValueType = vtFloat
+      TabOrder = 1
       Value = 1.000000000000000000
-      TabOrder = 0
+      Visible = True
     end
   end
   object pAllCross: TPanel
@@ -335,27 +335,26 @@ object FToolBox: TFToolBox
       ShowHint = True
       TabOrder = 0
     end
-    object edWidth: TJvSpinEdit
+    object edWidth: TSpinEdit
       Left = 154
       Top = 21
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      Decimal = 0
-      MinValue = 1.000000000000000000
-      Value = 1.000000000000000000
+      Height = 22
+      MaxValue = 0
+      MinValue = 1
       TabOrder = 1
+      Value = 0
       OnChange = edLightnessBorderChange
     end
-    object edHeight: TJvSpinEdit
+    object edHeight: TSpinEdit
       Left = 246
       Top = 21
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      Decimal = 0
-      MinValue = 1.000000000000000000
+      Height = 22
+      MaxValue = 0
+      MinValue = 1
       TabOrder = 2
+      Value = 0
       OnChange = edLightnessBorderChange
     end
   end
@@ -372,9 +371,6 @@ object FToolBox: TFToolBox
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = btnOKClick
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -410,5 +406,8 @@ object FToolBox: TFToolBox
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+    ParentFont = False
+    TabOrder = 3
+    OnClick = btnOKClick
   end
 end

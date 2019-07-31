@@ -107,9 +107,4 @@ inherited FmJCrossPuzzle: TFmJCrossPuzzle
       OnClick = chbOverwriteCellsClick
     end
   end
-  inherited frxPrintList: TfrxReport
-    Datasets = <>
-    Variables = <>
-    Style = <>
-  end
 end

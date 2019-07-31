@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, Mask, ComCtrls, ExtCtrls,
-  Buttons, jsCommon, settings, JvExMask, JvSpin;
+  Buttons, jsCommon, settings, Vcl.Samples.Spin, DBCtrlsEh;
 
 type
   TFToolBox = class(TForm)
@@ -30,10 +30,10 @@ type
     Label3: TLabel;
     Label4: TLabel;
     btnOK: TBitBtn;
-    edLightnessBorder: TJvSpinEdit;
-    edGammaCoeff: TJvSpinEdit;
-    edWidth: TJvSpinEdit;
-    edHeight: TJvSpinEdit;
+    edLightnessBorder: TSpinEdit;
+    edWidth: TSpinEdit;
+    edHeight: TSpinEdit;
+    edGammaCoeff: TDBNumberEditEh;
     procedure trbLightnessChange(Sender: TObject);
     procedure edLightnessBorderChange(Sender: TObject);
     procedure chbLightnessBorderClick(Sender: TObject);
@@ -70,7 +70,7 @@ end;
 
 procedure TFToolBox.edLightnessBorderChange(Sender: TObject);
 begin
-  trbLightness.Position := edLightnessBorder.AsInteger;
+  trbLightness.Position := edLightnessBorder.Value;
 end;
 
 procedure TFToolBox.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -124,7 +124,7 @@ begin
   else if rbnBlue.Checked then frmSettings.AImgAnalisator := iaBlue
   else if rbnMonoPal.Checked then frmSettings.AImgAnalisator := iaMono;
   frmSettings.AUserSetLightness := chbLightnessBorder.Checked;
-  frmSettings.ALightnessBorder := edLightnessBorder.AsInteger;
+  frmSettings.ALightnessBorder := edLightnessBorder.Value;
   frmSettings.AGammaCoeff := edGammaCoeff.Value;
   case chbPxFormat.ItemIndex of
     0: frmSettings.APxFormat := pf1bit; //моно
@@ -136,8 +136,8 @@ begin
     else frmSettings.APxFormat := pf4bit;
   end;
   frmSettings.AImgInvert := chbNegative.Checked;
-  frmSettings.ACrossWidth := edWidth.AsInteger;
-  frmSettings.ACrossHeight := edHeight.AsInteger;
+  frmSettings.ACrossWidth := edWidth.Value;
+  frmSettings.ACrossHeight := edHeight.Value;
 end;
 
 procedure TFToolBox.SetControls;
@@ -249,7 +249,7 @@ end;
 
 procedure TFToolBox.trbLightnessChange(Sender: TObject);
 begin
-  edLightnessBorder.AsInteger := trbLightness.Position;
+  edLightnessBorder.Value := trbLightness.Position;
 end;
 
 end.

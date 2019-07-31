@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, Mask, ExtCtrls, Buttons,
-  jsCommon, settings, JvExMask, JvSpin;
+  jsCommon, settings, Vcl.Samples.Spin;
 
 type
   TfrmInputSize = class(TForm)
@@ -13,8 +13,8 @@ type
     Label2: TLabel;
     btnOK: TBitBtn;
     btnCancel: TBitBtn;
-    edWidth: TJvSpinEdit;
-    edHeight: TJvSpinEdit;
+    edWidth: TSpinEdit;
+    edHeight: TSpinEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -33,8 +33,8 @@ implementation
 
 procedure TfrmInputSize.btnOKClick(Sender: TObject);
 begin
-  AHeight := edHeight.AsInteger;
-  AWidth := edWidth.AsInteger;
+  AHeight := edHeight.Value;
+  AWidth := edWidth.Value;
   r_ok := true;
   frmSettings.ACrossWidth := AWidth;
   frmSettings.ACrossHeight := AHeight;

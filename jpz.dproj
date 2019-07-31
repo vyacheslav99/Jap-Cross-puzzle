@@ -1,102 +1,241 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectGuid>{59067aa6-92b5-4253-9725-09106a354683}</ProjectGuid>
-    <MainSource>jpz.dpr</MainSource>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-    <DCC_DependencyCheckOutputName>jpz.exe</DCC_DependencyCheckOutputName>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Version>7.0</Version>
-    <DCC_DebugInformation>False</DCC_DebugInformation>
-    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
-    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
-    <DCC_UnitSearchPath>..\common;units;tests</DCC_UnitSearchPath>
-    <DCC_ResourcePath>..\common;units;tests</DCC_ResourcePath>
-    <DCC_ObjPath>..\common;units;tests</DCC_ObjPath>
-    <DCC_IncludePath>..\common;units;tests</DCC_IncludePath>
-    <DCC_Define>RELEASE</DCC_Define>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Version>7.0</Version>
-    <DCC_UnitSearchPath>..\common;units;tests</DCC_UnitSearchPath>
-    <DCC_ResourcePath>..\common;units;tests</DCC_ResourcePath>
-    <DCC_ObjPath>..\common;units;tests</DCC_ObjPath>
-    <DCC_IncludePath>..\common;units;tests</DCC_IncludePath>
-    <DCC_Define>DEBUG</DCC_Define>
-  </PropertyGroup>
-  <ProjectExtensions>
-    <Borland.Personality>Delphi.Personality</Borland.Personality>
-    <Borland.ProjectType />
-    <BorlandProject>
-<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">4</VersionInfo><VersionInfo Name="MinorVer">1</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1049</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">ViSla</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Японский кроссворд (цв. и ч-б). Судоку</VersionInfoKeys><VersionInfoKeys Name="FileVersion">4.1.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName">Японский кроссворд</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename">jpz.exe</VersionInfoKeys><VersionInfoKeys Name="ProductName">Японский кроссворд</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">4.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">jpz.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
-  </ProjectExtensions>
-  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
-  <ItemGroup>
-    <DelphiCompile Include="jpz.dpr">
-      <MainSource>MainSource</MainSource>
-    </DelphiCompile>
-    <DCCReference Include="units\about.pas">
-      <Form>fAbout</Form>
-    </DCCReference>
-    <DCCReference Include="units\cpuzzle.pas">
-      <Form>fmPrompt</Form>
-    </DCCReference>
-    <DCCReference Include="units\frmCCPuzzle.pas">
-      <Form>FmCCrossPuzzle</Form>
-    </DCCReference>
-    <DCCReference Include="units\frmCommon.pas">
-      <Form>CommonFrame</Form>
-    </DCCReference>
-    <DCCReference Include="units\frmJCPuzzle.pas">
-      <Form>FmJCrossPuzzle</Form>
-    </DCCReference>
-    <DCCReference Include="units\frmSudoku.pas">
-      <Form>FmSudoku</Form>
-    </DCCReference>
-    <DCCReference Include="units\GifImage.pas" />
-    <DCCReference Include="units\help.pas">
-      <Form>frmHelp</Form>
-    </DCCReference>
-    <DCCReference Include="units\imgUtils.pas" />
-    <DCCReference Include="units\InputSize.pas">
-      <Form>frmInputSize</Form>
-    </DCCReference>
-    <DCCReference Include="units\jsCommon.pas" />
-    <DCCReference Include="units\main.pas">
-      <Form>frmMain</Form>
-    </DCCReference>
-    <DCCReference Include="units\NewSudoku.pas">
-      <Form>fNewSudoku</Form>
-    </DCCReference>
-    <DCCReference Include="units\pgrid.pas" />
-    <DCCReference Include="units\propertys.pas">
-      <Form>FProps</Form>
-    </DCCReference>
-    <DCCReference Include="units\puzzle.pas">
-      <Form>fPrompt</Form>
-    </DCCReference>
-    <DCCReference Include="units\Records.pas">
-      <Form>frmRecords</Form>
-    </DCCReference>
-    <DCCReference Include="units\selbox.pas">
-      <Form>fSelectBox</Form>
-    </DCCReference>
-    <DCCReference Include="units\select_puzzle.pas">
-      <Form>frmOpenPuzzle</Form>
-    </DCCReference>
-    <DCCReference Include="units\settings.pas">
-      <Form>frmSettings</Form>
-    </DCCReference>
-    <DCCReference Include="units\splash.pas">
-      <Form>fSplash</Form>
-    </DCCReference>
-    <DCCReference Include="units\sudoku.pas">
-      <Form>frmPrompt</Form>
-    </DCCReference>
-    <DCCReference Include="units\toolbox.pas">
-      <Form>FToolBox</Form>
-    </DCCReference>
-  </ItemGroup>
+    <PropertyGroup>
+        <ProjectGuid>{59067aa6-92b5-4253-9725-09106a354683}</ProjectGuid>
+        <MainSource>jpz.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>jpz.exe</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1025</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <SanitizedProjectName>jpz</SanitizedProjectName>
+        <VerInfo_Keys>CompanyName=ViSla;FileDescription=Японский кроссворд (цв. и ч-б). Судоку;FileVersion=4.1.0.0;InternalName=Японский кроссворд;LegalCopyright=;LegalTrademarks=;OriginalFilename=jpz.exe;ProductName=Японский кроссворд;ProductVersion=4.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;FireDAC.VCLUI;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MajorVer>4</VerInfo_MajorVer>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>jpz_Icon.ico</Icon_MainIcon>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>jpz_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_UnitSearchPath>..\common;units;tests;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>..\common;units;tests;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>..\common;units;tests;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>..\common;units;tests;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_UnitSearchPath>..\common;units;tests;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>..\common;units;tests;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>..\common;units;tests;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>..\common;units;tests;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">4</VersionInfo>
+                    <VersionInfo Name="MinorVer">1</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">ViSla</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">Японский кроссворд (цв. и ч-б). Судоку</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">4.1.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">Японский кроссворд</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">jpz.exe</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">Японский кроссворд</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">4.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">jpz.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="units\sudoku.pas">
+            <Form>frmPrompt</Form>
+        </DCCReference>
+        <DCCReference Include="units\about.pas">
+            <Form>fAbout</Form>
+        </DCCReference>
+        <DCCReference Include="units\cpuzzle.pas">
+            <Form>fmPrompt</Form>
+        </DCCReference>
+        <DCCReference Include="units\frmCCPuzzle.pas">
+            <Form>FmCCrossPuzzle</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\frmCommon.pas">
+            <Form>CommonFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\frmJCPuzzle.pas">
+            <Form>FmJCrossPuzzle</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\frmSudoku.pas">
+            <Form>FmSudoku</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="units\GifImage.pas"/>
+        <DCCReference Include="units\help.pas">
+            <Form>frmHelp</Form>
+        </DCCReference>
+        <DCCReference Include="units\imgUtils.pas"/>
+        <DCCReference Include="units\InputSize.pas">
+            <Form>frmInputSize</Form>
+        </DCCReference>
+        <DCCReference Include="units\jsCommon.pas"/>
+        <DCCReference Include="units\main.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="units\NewSudoku.pas">
+            <Form>fNewSudoku</Form>
+        </DCCReference>
+        <DCCReference Include="units\pgrid.pas"/>
+        <DCCReference Include="units\puzzle.pas">
+            <Form>fPrompt</Form>
+        </DCCReference>
+        <DCCReference Include="units\Records.pas">
+            <Form>frmRecords</Form>
+        </DCCReference>
+        <DCCReference Include="units\selbox.pas">
+            <Form>fSelectBox</Form>
+        </DCCReference>
+        <DCCReference Include="units\select_puzzle.pas">
+            <Form>frmOpenPuzzle</Form>
+        </DCCReference>
+        <DCCReference Include="units\settings.pas">
+            <Form>frmSettings</Form>
+        </DCCReference>
+        <DCCReference Include="units\splash.pas">
+            <Form>fSplash</Form>
+        </DCCReference>
+        <DCCReference Include="units\toolbox.pas">
+            <Form>FToolBox</Form>
+        </DCCReference>
+        <DCCReference Include="units\propertys.pas">
+            <Form>FProps</Form>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
 </Project>

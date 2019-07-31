@@ -3,8 +3,8 @@ unit frmCommon;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, {XMLDoc, xmldom, XMLIntf,}
-  frxClass, ExtCtrls, pgrid, Records, settings, jsCommon, ExtDlgs, MemTableDataEh, MemTableEh, Db;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, {XMLDoc, xmldom, XMLIntf,
+  frxClass,} ExtCtrls, pgrid, Records, settings, jsCommon, ExtDlgs, MemTableDataEh, MemTableEh, Db;
 
 type
   TSetActionButtons = procedure (Val: boolean) of object;
@@ -12,7 +12,7 @@ type
   TCommonFrame = class(TFrame)
     ScrollBox1: TScrollBox;
     OpenDialog: TOpenDialog;
-    frxPrintList: TfrxReport;
+    //frxPrintList: TfrxReport;
     tmrResize: TTimer;
     OpenPicDialog: TOpenPictureDialog;
     mtStat: TMemTableEh;
@@ -466,16 +466,16 @@ begin
 end;
 
 procedure TCommonFrame.PrintCross;
-var
+{var
   i, j: integer;
   m: TfrxMemoView;
   mp: TfrxPage;
   l: Extended;
   t: Extended;
-  v, h: integer;
+  v, h: integer;}
 
 begin
-  Screen.Cursor := crHourGlass;
+  {Screen.Cursor := crHourGlass;
   v := 0;
   h := 0;
   try
@@ -512,7 +512,7 @@ begin
     frxPrintList.ShowReport;
   finally
     Screen.Cursor := crDefault;
-  end;
+  end;}
 end;
 
 procedure TCommonFrame.RefreshGridMetrics;

@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, Mask, ExtCtrls, Buttons,
-  ComCtrls, IniFiles, Registry, ShlObj, ComObj, ShellAPI, ActiveX, ImgList, WDGradient, jsCommon, JvExMask, JvSpin;
+  ComCtrls, IniFiles, Registry, ShlObj, ComObj, ShellAPI, ActiveX, ImgList, jsCommon, System.ImageList,
+  Vcl.Samples.Spin, DBCtrlsEh;
 
 type
   TfrmSettings = class(TForm)
@@ -13,7 +14,6 @@ type
     btnCancel: TBitBtn;
     Bevel1: TBevel;
     pImgAnalyse: TPanel;
-    pCaption: TWDGradientPanel;
     ilSetTree: TImageList;
     pNone: TPanel;
     lblPartDescr: TLabel;
@@ -125,14 +125,15 @@ type
     trbLightness: TTrackBar;
     rbnMonoPal: TRadioButton;
     chbInvertBg: TCheckBox;
-    edLightnessBorder: TJvSpinEdit;
-    edGammaCoeff: TJvSpinEdit;
-    edCellWidth: TJvSpinEdit;
-    edCellHeight: TJvSpinEdit;
-    edFontSize: TJvSpinEdit;
-    edLinesWidth: TJvSpinEdit;
-    edFatLineWidth: TJvSpinEdit;
-    edAutosaveInterval: TJvSpinEdit;
+    edLightnessBorder: TSpinEdit;
+    edCellWidth: TSpinEdit;
+    edCellHeight: TSpinEdit;
+    edFontSize: TSpinEdit;
+    edLinesWidth: TSpinEdit;
+    edFatLineWidth: TSpinEdit;
+    edAutosaveInterval: TSpinEdit;
+    pCaption: TPanel;
+    edGammaCoeff: TDBNumberEditEh;
     procedure edCellHeightChange(Sender: TObject);
     procedure cbFontNameChange(Sender: TObject);
     procedure edBackgroundColorClick(Sender: TObject);
@@ -386,14 +387,14 @@ procedure TfrmSettings.edCellHeightChange(Sender: TObject);
 begin
   if (not IsOnShow) and (frmMain.CurrGame = cgSudoku) then
   try
-    edFontSize.AsInteger := GetFontSize(edCellHeight.AsInteger);
+    edFontSize.Value := GetFontSize(edCellHeight.Value);
   except
   end;
 end;
 
 procedure TfrmSettings.edLightnessBorderChange(Sender: TObject);
 begin
-  trbLightness.Position := edLightnessBorder.AsInteger;
+  trbLightness.Position := edLightnessBorder.Value;
 end;
 
 procedure TfrmSettings.FillFonts(var Combo: TComboBox);
@@ -468,7 +469,7 @@ begin
     edLightnessBorder.MaxValue := 255;
     trbLightness.Max := 255;
   end;
-  edLightnessBorder.AsInteger := Round(edLightnessBorder.MaxValue / 2);
+  edLightnessBorder.Value := Round(edLightnessBorder.MaxValue / 2);
   trbLightness.Position := Round(trbLightness.Max / 2);
 end;
 
@@ -599,13 +600,13 @@ procedure TfrmSettings.SaveSettings;
 begin
   AutoCellSize := chbAutoCellSize.Checked;
   AFirstRun := chbFirstRun.Checked;
-  ACellWidth := edCellWidth.AsInteger;
-  ACellHeight := edCellHeight.AsInteger;
-  AFatLinesWidth := edFatLineWidth.AsInteger;
-  ALinesWidth := edLinesWidth.AsInteger;
+  ACellWidth := edCellWidth.Value;
+  ACellHeight := edCellHeight.Value;
+  AFatLinesWidth := edFatLineWidth.Value;
+  ALinesWidth := edLinesWidth.Value;
   Autosave := chbAutosave.Checked;
   AShowCellsHint := chbShowCellsHint.Checked;
-  AutosaveInterval := edAutosaveInterval.AsInteger;
+  AutosaveInterval := edAutosaveInterval.Value;
   ABackgroundColor := edBackgroundColor.Color;
   ACapFontColor := edCapFontColor.Color;
   ACapOpenColor := edCapOpenColor.Color;
@@ -617,7 +618,7 @@ begin
   AImgGrayedColor := edImgGrayedColor.Color;
   ARulerColor := edRulerColor.Color;
   AImgInvert := chbNegative.Checked;
-  ALightnessBorder := edLightnessBorder.AsInteger;
+  ALightnessBorder := edLightnessBorder.Value;
   AUserSetLightness := chbLightnessBorder.Checked;
   ACapCellStyle := TCellStyle(cbCapCellStyle.ItemIndex);
   ACapCellChStyle := cbCapCellChStyle.ItemIndex - 1;
@@ -652,7 +653,7 @@ begin
   AStartAction := cbStartAction.ItemIndex;
   ACloseGameConfirm := chbCloseGameConfirm.Checked;
   ACloseEditorConfirm := chbCloseEditorConfirm.Checked;
-  ACellFontSize := edFontSize.AsInteger;
+  ACellFontSize := edFontSize.Value;
   ACellFontName := cbFontName.Text;
 
   ACellFontStyle := [];
@@ -781,12 +782,12 @@ begin
   SetIndividualGameControls;
   chbAutoCellSize.Checked := AutoCellSize;
   chbAutoCellSizeClick(chbAutoCellSize);
-  edCellWidth.AsInteger := ACellWidth;
-  edCellHeight.AsInteger := ACellHeight;
-  edFatLineWidth.AsInteger := AFatLinesWidth;
-  edLinesWidth.AsInteger := ALinesWidth;
+  edCellWidth.Value := ACellWidth;
+  edCellHeight.Value := ACellHeight;
+  edFatLineWidth.Value := AFatLinesWidth;
+  edLinesWidth.Value := ALinesWidth;
   chbAutosave.Checked := Autosave;
-  edAutosaveInterval.AsInteger := AutosaveInterval;
+  edAutosaveInterval.Value := AutosaveInterval;
   chbAutosaveClick(self);
   edBackgroundColor.Color := ABackgroundColor;
   edCapFontColor.Color := ACapFontColor;
@@ -831,7 +832,7 @@ begin
   end;
 
   edGammaCoeff.Value := AGammaCoeff;
-  edLightnessBorder.AsInteger := ALightnessBorder;
+  edLightnessBorder.Value := ALightnessBorder;
   trbLightness.Position := ALightnessBorder;
   cbCapCellStyle.ItemIndex := Ord(ACapCellStyle);
   cbCapCellChStyle.ItemIndex := ACapCellChStyle + 1;
@@ -841,7 +842,7 @@ begin
   cbStartAction.ItemIndex := AStartAction;
   chbCloseGameConfirm.Checked := ACloseGameConfirm;
   chbCloseEditorConfirm.Checked := ACloseEditorConfirm;
-  edFontSize.AsInteger := ACellFontSize;
+  edFontSize.Value := ACellFontSize;
   cbFontName.ItemIndex := cbFontName.Items.IndexOf(ACellFontName);
   chbFontBold.Checked := (fsBold in ACellFontStyle);
   chbFontItalic.Checked := (fsItalic in ACellFontStyle);
@@ -891,7 +892,7 @@ end;
 
 procedure TfrmSettings.trbLightnessChange(Sender: TObject);
 begin
-  edLightnessBorder.AsInteger := trbLightness.Position;
+  edLightnessBorder.Value := trbLightness.Position;
 end;
 
 procedure TfrmSettings.tvPartitionChange(Sender: TObject; Node: TTreeNode);

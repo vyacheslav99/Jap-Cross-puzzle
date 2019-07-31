@@ -108,9 +108,4 @@ inherited FmSudoku: TFmSudoku
       OnClick = chbOverwriteCellsClick
     end
   end
-  inherited frxPrintList: TfrxReport
-    Datasets = <>
-    Variables = <>
-    Style = <>
-  end
 end

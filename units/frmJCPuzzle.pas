@@ -3,7 +3,7 @@ unit frmJCPuzzle;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, StdCtrls, Dialogs, ExtCtrls, frxClass,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, StdCtrls, Dialogs, ExtCtrls, {frxClass,}
   settings, pgrid, select_puzzle, frmCommon, puzzle, jsCommon, DB, ExtDlgs, toolbox, Buttons, MemTableDataEh, MemTableEh, propertys;
 
 type

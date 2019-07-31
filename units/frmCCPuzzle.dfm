@@ -181,11 +181,6 @@ inherited FmCCrossPuzzle: TFmCCrossPuzzle
       OnClick = chbInvertBgClick
     end
   end
-  inherited frxPrintList: TfrxReport
-    Datasets = <>
-    Variables = <>
-    Style = <>
-  end
   object ColorDialog: TColorDialog
     Left = 272
     Top = 38

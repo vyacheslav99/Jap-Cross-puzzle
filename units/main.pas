@@ -3,9 +3,9 @@ unit main;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, ComCtrls, ActnList, Menus, {Grids, }
-  AppEvnts, ImgList, ExtCtrls, INIFiles, {frxClass, }XPMan, StdCtrls, ToolWin, Buttons, splash, frmCommon, frmJCPuzzle,
-  frmCCPuzzle, frmSudoku, settings, Records, about, jsCommon, selbox, ShellAPI, help, InputSize;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, ComCtrls, ActnList, Menus,
+  AppEvnts, ImgList, ExtCtrls, INIFiles, XPMan, StdCtrls, ToolWin, Buttons, splash, frmCommon, frmJCPuzzle, frmCCPuzzle,
+  frmSudoku, settings, Records, about, jsCommon, selbox, ShellAPI, help, InputSize, System.ImageList, System.Actions;
 
 type
   TfrmMain = class(TForm)

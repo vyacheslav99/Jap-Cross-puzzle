@@ -3,7 +3,7 @@ unit frmCCPuzzle;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, StdCtrls, Dialogs, ExtCtrls, frxClass,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, StdCtrls, Dialogs, ExtCtrls, {frxClass,}
   settings, pgrid, select_puzzle, frmCommon, cpuzzle, jsCommon, imgUtils, Buttons, DB, ExtDlgs, toolbox, MemTableDataEh,
   MemTableEh, propertys;
 

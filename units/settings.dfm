@@ -30,6 +30,72 @@ object frmSettings: TfrmSettings
     Anchors = [akLeft, akRight, akBottom]
     Shape = bsFrame
   end
+  object pGame: TPanel
+    Left = 229
+    Top = 23
+    Width = 429
+    Height = 412
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    BevelInner = bvLowered
+    TabOrder = 5
+    Visible = False
+    object Label24: TLabel
+      Left = 15
+      Top = 18
+      Width = 100
+      Height = 13
+      Hint = 
+        #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080' '#1085#1086#1074#1086#1081' '#1080#1075#1088#1099' ('#1085#1077' '#1091#1095#1080#1090#1099#1074#1072#1077#1090#1089#1103' '#1076#1083#1103' '#1071#1087#1086#1085#1089#1082#1086#1075#1086' '#1082#1088#1086#1089#1089 +
+        #1074#1086#1088#1076#1072')'
+      Caption = #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object Bevel6: TBevel
+      Left = 10
+      Top = 48
+      Width = 410
+      Height = 5
+      Shape = bsFrame
+    end
+    object chbAutosave: TCheckBox
+      Left = 16
+      Top = 69
+      Width = 166
+      Height = 15
+      Caption = #1040#1074#1090#1086#1089#1086#1093#1088#1072#1085#1077#1085#1080#1077' '#1080#1075#1088#1099
+      TabOrder = 1
+      OnClick = chbAutosaveClick
+    end
+    object cbDifficulty: TComboBox
+      Left = 127
+      Top = 15
+      Width = 145
+      Height = 21
+      Hint = #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080' '#1085#1086#1074#1086#1081' '#1080#1075#1088#1099
+      Style = csDropDownList
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Items.Strings = (
+        #1054#1095#1077#1085#1100' '#1083#1077#1075#1082#1072#1103
+        #1051#1077#1075#1082#1072#1103
+        #1053#1086#1088#1084#1072#1083#1100#1085#1072#1103
+        #1057#1083#1086#1078#1085#1072#1103
+        #1057#1074#1077#1088#1093#1089#1083#1086#1078#1085#1072#1103)
+    end
+    object edAutosaveInterval: TSpinEdit
+      Left = 182
+      Top = 66
+      Width = 50
+      Height = 22
+      MaxValue = 100
+      MinValue = 1
+      TabOrder = 2
+      Value = 1
+      Visible = False
+    end
+  end
   object pGeneral: TPanel
     Left = 229
     Top = 23
@@ -234,9 +300,6 @@ object frmSettings: TfrmSettings
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-      OnClick = bntCreateShortcutClick
       Glyph.Data = {
         36040000424D3604000000000000360000002800000010000000100000000100
         2000000000000004000000000000000000000000000000000000D2CABF00D2CA
@@ -272,6 +335,9 @@ object frmSettings: TfrmSettings
         BF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CA
         BF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CA
         BF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00D2CABF00}
+      ParentFont = False
+      TabOrder = 3
+      OnClick = bntCreateShortcutClick
     end
   end
   object pNone: TPanel
@@ -281,7 +347,7 @@ object frmSettings: TfrmSettings
     Height = 412
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvLowered
-    TabOrder = 5
+    TabOrder = 4
     object lblPartDescr: TLabel
       Left = 23
       Top = 18
@@ -303,7 +369,7 @@ object frmSettings: TfrmSettings
     Height = 412
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvLowered
-    TabOrder = 7
+    TabOrder = 6
     Visible = False
     object GroupBox9: TGroupBox
       Left = 15
@@ -677,7 +743,7 @@ object frmSettings: TfrmSettings
     Height = 412
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvLowered
-    TabOrder = 9
+    TabOrder = 8
     Visible = False
     object Label27: TLabel
       Left = 21
@@ -792,27 +858,25 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
       end
-      object edCellWidth: TJvSpinEdit
+      object edCellWidth: TSpinEdit
         Left = 63
         Top = 17
         Width = 50
-        Height = 21
-        Alignment = taRightJustify
-        MaxValue = 100.000000000000000000
-        MinValue = 8.000000000000000000
-        Value = 8.000000000000000000
+        Height = 22
+        MaxValue = 100
+        MinValue = 8
         TabOrder = 0
+        Value = 8
       end
-      object edCellHeight: TJvSpinEdit
+      object edCellHeight: TSpinEdit
         Left = 179
         Top = 16
         Width = 50
-        Height = 21
-        Alignment = taRightJustify
-        MaxValue = 100.000000000000000000
-        MinValue = 8.000000000000000000
-        Value = 8.000000000000000000
+        Height = 22
+        MaxValue = 100
+        MinValue = 8
         TabOrder = 1
+        Value = 8
         OnChange = edCellHeightChange
       end
     end
@@ -855,39 +919,37 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
       end
-      object edLinesWidth: TJvSpinEdit
+      object edLinesWidth: TSpinEdit
         Left = 269
         Top = 16
         Width = 50
-        Height = 21
-        Alignment = taRightJustify
-        MaxValue = 5.000000000000000000
-        MinValue = 1.000000000000000000
-        Value = 5.000000000000000000
+        Height = 22
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxValue = 5
+        MinValue = 1
         ParentFont = False
         TabOrder = 0
+        Value = 5
       end
-      object edFatLineWidth: TJvSpinEdit
+      object edFatLineWidth: TSpinEdit
         Left = 269
         Top = 38
         Width = 50
-        Height = 21
-        Alignment = taRightJustify
-        MaxValue = 5.000000000000000000
-        MinValue = 1.000000000000000000
-        Value = 5.000000000000000000
+        Height = 22
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxValue = 5
+        MinValue = 1
         ParentFont = False
         TabOrder = 1
+        Value = 5
       end
     end
     object GroupBox7: TGroupBox
@@ -966,7 +1028,6 @@ object frmSettings: TfrmSettings
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
-        ItemHeight = 13
         ParentFont = False
         TabOrder = 0
         Items.Strings = (
@@ -989,7 +1050,6 @@ object frmSettings: TfrmSettings
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
-        ItemHeight = 13
         ParentFont = False
         TabOrder = 2
         Items.Strings = (
@@ -1012,7 +1072,6 @@ object frmSettings: TfrmSettings
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
-        ItemHeight = 13
         ParentFont = False
         TabOrder = 1
         Items.Strings = (
@@ -1036,7 +1095,6 @@ object frmSettings: TfrmSettings
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
-        ItemHeight = 13
         ParentFont = False
         TabOrder = 3
         Items.Strings = (
@@ -1056,7 +1114,6 @@ object frmSettings: TfrmSettings
       Width = 152
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       ParentShowHint = False
       ShowHint = False
       TabOrder = 2
@@ -1130,16 +1187,15 @@ object frmSettings: TfrmSettings
         OnClick = cbFontNameChange
       end
     end
-    object edFontSize: TJvSpinEdit
+    object edFontSize: TSpinEdit
       Left = 66
       Top = 154
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      MaxValue = 70.000000000000000000
-      MinValue = 8.000000000000000000
-      Value = 8.000000000000000000
+      Height = 22
+      MaxValue = 70
+      MinValue = 8
       TabOrder = 3
+      Value = 8
     end
   end
   object pConfirmations: TPanel
@@ -1149,7 +1205,7 @@ object frmSettings: TfrmSettings
     Height = 412
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelInner = bvLowered
-    TabOrder = 11
+    TabOrder = 9
     Visible = False
     object Bevel2: TBevel
       Left = 10
@@ -1275,7 +1331,6 @@ object frmSettings: TfrmSettings
       Height = 21
       Hint = #1044#1077#1081#1089#1090#1074#1080#1077' '#1087#1088#1080' '#1079#1072#1087#1091#1089#1082#1077' '#1087#1088#1086#1075#1088#1072#1084#1084#1099
       Style = csDropDownList
-      ItemHeight = 13
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
@@ -1385,7 +1440,7 @@ object frmSettings: TfrmSettings
       Caption = #1055#1077#1088#1077#1079#1072#1087#1080#1089#1099#1074#1072#1090#1100' '#1085#1077#1087#1091#1089#1090#1099#1077' '#1103#1095#1077#1081#1082#1080' '#1087#1088#1080' '#1079#1072#1087#1086#1083#1085#1077#1085#1080#1080' '#1089#1083#1091#1095#1072#1081#1085#1099#1084' '#1086#1073#1088#1072#1079#1086#1084
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 12
+      TabOrder = 11
     end
     object chbNegative: TCheckBox
       Left = 12
@@ -1410,8 +1465,7 @@ object frmSettings: TfrmSettings
       Width = 78
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
-      TabOrder = 11
+      TabOrder = 10
       Items.Strings = (
         #1084#1086#1085#1086
         '16 '#1094#1074#1077#1090#1086#1074
@@ -1540,99 +1594,34 @@ object frmSettings: TfrmSettings
       Caption = #1048#1085#1074#1077#1088#1090#1080#1088#1086#1074#1072#1090#1100' '#1074#1084#1077#1089#1090#1077' '#1089' '#1092#1086#1085#1086#1084
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 13
+      TabOrder = 12
     end
-    object edLightnessBorder: TJvSpinEdit
+    object edLightnessBorder: TSpinEdit
       Left = 267
       Top = 182
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      MaxValue = 255.000000000000000000
-      MinValue = 1.000000000000000000
-      Value = 1.000000000000000000
+      Height = 22
+      MaxValue = 255
+      MinValue = 1
       TabOrder = 7
+      Value = 1
       OnChange = edLightnessBorderChange
     end
-    object edGammaCoeff: TJvSpinEdit
-      Left = 270
-      Top = 295
-      Width = 60
+    object edGammaCoeff: TDBNumberEditEh
+      Left = 267
+      Top = 298
+      Width = 63
       Height = 21
-      Alignment = taRightJustify
-      Decimal = 3
+      DecimalPlaces = 3
+      DynProps = <>
+      EditButton.Style = ebsUpDownEh
+      EditButton.Visible = True
+      EditButtons = <>
       MaxValue = 10.000000000000000000
       MinValue = -10.000000000000000000
-      ValueType = vtFloat
-      TabOrder = 10
-    end
-  end
-  object pGame: TPanel
-    Left = 229
-    Top = 23
-    Width = 429
-    Height = 412
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    BevelInner = bvLowered
-    TabOrder = 6
-    Visible = False
-    object Label24: TLabel
-      Left = 15
-      Top = 18
-      Width = 100
-      Height = 13
-      Hint = 
-        #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080' '#1085#1086#1074#1086#1081' '#1080#1075#1088#1099' ('#1085#1077' '#1091#1095#1080#1090#1099#1074#1072#1077#1090#1089#1103' '#1076#1083#1103' '#1071#1087#1086#1085#1089#1082#1086#1075#1086' '#1082#1088#1086#1089#1089 +
-        #1074#1086#1088#1076#1072')'
-      Caption = #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080
-      ParentShowHint = False
-      ShowHint = True
-    end
-    object Bevel6: TBevel
-      Left = 10
-      Top = 48
-      Width = 410
-      Height = 5
-      Shape = bsFrame
-    end
-    object chbAutosave: TCheckBox
-      Left = 16
-      Top = 69
-      Width = 166
-      Height = 15
-      Caption = #1040#1074#1090#1086#1089#1086#1093#1088#1072#1085#1077#1085#1080#1077' '#1080#1075#1088#1099
-      TabOrder = 1
-      OnClick = chbAutosaveClick
-    end
-    object cbDifficulty: TComboBox
-      Left = 127
-      Top = 15
-      Width = 145
-      Height = 21
-      Hint = #1059#1088#1086#1074#1077#1085#1100' '#1089#1083#1086#1078#1085#1086#1089#1090#1080' '#1085#1086#1074#1086#1081' '#1080#1075#1088#1099
-      Style = csDropDownList
-      ItemHeight = 13
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-      Items.Strings = (
-        #1054#1095#1077#1085#1100' '#1083#1077#1075#1082#1072#1103
-        #1051#1077#1075#1082#1072#1103
-        #1053#1086#1088#1084#1072#1083#1100#1085#1072#1103
-        #1057#1083#1086#1078#1085#1072#1103
-        #1057#1074#1077#1088#1093#1089#1083#1086#1078#1085#1072#1103)
-    end
-    object edAutosaveInterval: TJvSpinEdit
-      Left = 182
-      Top = 66
-      Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      MaxValue = 100.000000000000000000
-      MinValue = 1.000000000000000000
+      TabOrder = 13
       Value = 1.000000000000000000
-      TabOrder = 2
-      Visible = False
+      Visible = True
     end
   end
   object tvPartition: TTreeView
@@ -1659,20 +1648,21 @@ object frmSettings: TfrmSettings
     OnChange = tvPartitionChange
     OnCustomDrawItem = tvPartitionCustomDrawItem
     Items.NodeData = {
-      0103000000290000000200000001000000FFFFFFFFFFFFFFFF00000000030000
-      00081E0441043D043E0432043D044B043504230000000000000001000000FFFF
-      FFFFFFFFFFFF0000000000000000051E04310449043804350421000000000000
-      0001000000FFFFFFFFFFFFFFFF00000000000000000418043304400430042B00
-      00000000000001000000FFFFFFFFFFFFFFFF0000000000000000091F043E0432
-      043504340435043D04380435042D0000000200000001000000FFFFFFFFFFFFFF
-      FF00000000020000000A1E0444043E0440043C043B0435043D04380435043700
-      00000000000001000000FFFFFFFFFFFFFFFF00000000000000000F2104420438
-      043B0438042000380420004004300437043C04350440044B0423000000000000
-      0001000000FFFFFFFFFFFFFFFF00000000000000000526043204350442043004
-      290000000200000001000000FFFFFFFFFFFFFFFF000000000100000008200435
-      04340430043A0442043E0440043F0000000000000001000000FFFFFFFFFFFFFF
-      FF0000000000000000131D0430044104420440043E0439043A04380420004004
-      3504340430043A0442043E0440043004}
+      03030000002E0000000200000001000000FFFFFFFFFFFFFFFFFFFFFFFF000000
+      000300000001081E0441043D043E0432043D044B043504280000000000000001
+      000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000001051E043104490438
+      043504260000000000000001000000FFFFFFFFFFFFFFFFFFFFFFFF0000000000
+      00000001041804330440043004300000000000000001000000FFFFFFFFFFFFFF
+      FFFFFFFFFF000000000000000001091F043E0432043504340435043D04380435
+      04320000000200000001000000FFFFFFFFFFFFFFFFFFFFFFFF00000000020000
+      00010A1E0444043E0440043C043B0435043D04380435043C0000000000000001
+      000000FFFFFFFFFFFFFFFFFFFFFFFF0000000000000000010F2104420438043B
+      0438042000380420004004300437043C04350440044B04280000000000000001
+      000000FFFFFFFFFFFFFFFFFFFFFFFF0000000000000000010526043204350442
+      0430042E0000000200000001000000FFFFFFFFFFFFFFFFFFFFFFFF0000000001
+      000000010820043504340430043A0442043E0440044400000000000000010000
+      00FFFFFFFFFFFFFFFFFFFFFFFF000000000000000001131D0430044104420440
+      043E0439043A043804200040043504340430043A0442043E0440043004}
   end
   object btnSave: TBitBtn
     Left = 487
@@ -1687,9 +1677,6 @@ object frmSettings: TfrmSettings
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ParentFont = False
-    TabOrder = 1
-    OnClick = btnSaveClick
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -1725,6 +1712,9 @@ object frmSettings: TfrmSettings
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnSaveClick
   end
   object btnCancel: TBitBtn
     Left = 575
@@ -1739,9 +1729,6 @@ object frmSettings: TfrmSettings
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ParentFont = False
-    TabOrder = 2
-    OnClick = btnCancelClick
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -1777,25 +1764,9 @@ object frmSettings: TfrmSettings
       FF002139FF00314AFF001831FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
-  end
-  object pCaption: TWDGradientPanel
-    Left = 229
-    Top = 3
-    Width = 429
-    Height = 17
-    Anchors = [akLeft, akTop, akRight]
-    Caption = 'pCaption'
-    Color = clBtnFace
-    Color1 = clWhite
-    Color2 = clSilver
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = 4079166
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    GradientDirection = gdVertical
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 2
+    OnClick = btnCancelClick
   end
   object btnReset: TBitBtn
     Left = 5
@@ -1810,14 +1781,23 @@ object frmSettings: TfrmSettings
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btnResetClick
+  end
+  object pCaption: TPanel
+    Left = 230
+    Top = 3
+    Width = 428
+    Height = 17
+    BevelOuter = bvSpace
+    Caption = 'Section title'
+    TabOrder = 11
   end
   object ilSetTree: TImageList
     Left = 192
     Top = 8
     Bitmap = {
-      494C010103000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

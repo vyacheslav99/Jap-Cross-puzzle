@@ -3,7 +3,7 @@ unit frmSudoku;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, frxClass, frmCommon, sudoku, pgrid,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, {frxClass,} frmCommon, sudoku, pgrid,
   NewSudoku, select_puzzle, settings, jsCommon, ExtCtrls, ExtDlgs, StdCtrls, Buttons, MemTableDataEh, MemTableEh, Db, propertys;
 
 type

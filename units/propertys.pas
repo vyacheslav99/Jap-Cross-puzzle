@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, Buttons, settings, jsCommon,
-  Mask, JvExMask, JvSpin;
+  Mask, Vcl.Samples.Spin;
 
 type
   TFProps = class(TForm)
@@ -16,9 +16,9 @@ type
     btnCancel: TBitBtn;
     GroupBox1: TGroupBox;
     Label1: TLabel;
-    edWidth: TJvSpinEdit;
+    edWidth: TSpinEdit;
     Label2: TLabel;
-    edHeight: TJvSpinEdit;
+    edHeight: TSpinEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnOKClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
@@ -73,7 +73,7 @@ end;
 
 function TFProps.GetHeight: integer;
 begin
-  result := edHeight.AsInteger;
+  result := edHeight.Value;
 end;
 
 procedure TFProps.btnCancelClick(Sender: TObject);
@@ -105,7 +105,7 @@ end;
 
 function TFProps.GetWidth: integer;
 begin
-  result := edWidth.AsInteger;
+  result := edWidth.Value;
 end;
 
 procedure TFProps.SetDifficulty(value: TDifficulty);
@@ -115,7 +115,7 @@ end;
 
 procedure TFProps.SetHeight(value: integer);
 begin
-  edHeight.AsInteger := value;
+  edHeight.Value := value;
 end;
 
 procedure TFProps.SetPuzzleName(value: string);
@@ -125,7 +125,7 @@ end;
 
 procedure TFProps.SetWidth(value: integer);
 begin
-  edWidth.AsInteger := value;
+  edWidth.Value := value;
 end;
 
 end.

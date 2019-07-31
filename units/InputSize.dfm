@@ -44,24 +44,25 @@ object frmInputSize: TfrmInputSize
       Height = 13
       Caption = #1050#1086#1083'-'#1074#1086' '#1089#1090#1088#1086#1082
     end
-    object edWidth: TJvSpinEdit
+    object edWidth: TSpinEdit
       Left = 130
       Top = 5
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      MinValue = 1.000000000000000000
+      Height = 22
+      MaxValue = 0
+      MinValue = 1
       TabOrder = 0
+      Value = 1
     end
-    object edHeight: TJvSpinEdit
+    object edHeight: TSpinEdit
       Left = 130
       Top = 29
       Width = 50
-      Height = 21
-      Alignment = taRightJustify
-      MinValue = 1.000000000000000000
-      Value = 1.000000000000000000
+      Height = 22
+      MaxValue = 0
+      MinValue = 1
       TabOrder = 1
+      Value = 1
     end
   end
   object btnOK: TBitBtn
@@ -76,9 +77,6 @@ object frmInputSize: TfrmInputSize
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ParentFont = False
-    TabOrder = 1
-    OnClick = btnOKClick
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -114,6 +112,9 @@ object frmInputSize: TfrmInputSize
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnOKClick
   end
   object btnCancel: TBitBtn
     Left = 105
@@ -127,9 +128,6 @@ object frmInputSize: TfrmInputSize
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ParentFont = False
-    TabOrder = 2
-    OnClick = btnCancelClick
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000FF00FF00FF00
@@ -165,5 +163,8 @@ object frmInputSize: TfrmInputSize
       FF002139FF00314AFF001831FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
       FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
+    ParentFont = False
+    TabOrder = 2
+    OnClick = btnCancelClick
   end
 end
