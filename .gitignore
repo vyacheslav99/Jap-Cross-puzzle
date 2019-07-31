@@ -8,4 +8,5 @@ save/
 *.dproj.local
 *.ini
 *.dsk
+*.stat
 statx.dat
