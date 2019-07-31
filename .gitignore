@@ -7,4 +7,5 @@ save/
 *.identcache
 *.dproj.local
 *.ini
+*.dsk
 statx.dat
