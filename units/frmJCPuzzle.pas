@@ -358,7 +358,8 @@ end;
 
 procedure TFmJCrossPuzzle.GridCellKeyPress(Sender: TObject; var Key: Char);
 begin
-
+{  if Ord(Key) in [49..57] then
+    SetCellState(pgPuzzle.CurrCell.Row, pgPuzzle.CurrCell.Col, false, Ord(Key));}
 end;
 
 procedure TFmJCrossPuzzle.GridCellMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
@@ -736,7 +737,7 @@ begin
         props.AWidth := frmSettings.ACrossWidth;
         props.AHeight := frmSettings.ACrossHeight;
         case GAction of
-          gaNew:
+          gaNew, gaSolve:
             if props.Exec then
             begin
               FPuzzle := TCrossPuzzle.CreateEmpty(props.AHeight, props.AWidth, false);

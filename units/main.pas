@@ -167,6 +167,8 @@ type
     N40: TMenuItem;
     N41: TMenuItem;
     N49: TMenuItem;
+    aSolve: TAction;
+    N50: TMenuItem;
     procedure aAddRowExecute(Sender: TObject);
     procedure aAddColExecute(Sender: TObject);
     procedure aDeleteRowExecute(Sender: TObject);
@@ -496,6 +498,7 @@ begin
   else if TAction(Sender) = aLoadImage then ca := gaImport
   else if TAction(Sender) = aLoadText then ca := gaImport3
   else if TAction(Sender) = aConvertColor then ca := gaImport2
+  else if TAction(Sender) = aSolve then ca := gaSolve
   else exit;
   FPuzzle.SetGameState(gsEdit, ca);
   if (FCurrGame = cgSudoku) and (FPuzzle.GameState in [gsGame, gsEdit]) then RegisterHotKeys;

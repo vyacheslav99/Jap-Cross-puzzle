@@ -77,7 +77,7 @@ type
   //перичислимые типы
   TCurrGame = (cgNone, cgJCrossPuzzle, cgSudoku, cgCCrossPuzzle);
   TGameState = (gsNone, gsGame, gsWin, gsEdit);
-  TGameAction = (gaNew, gaCurrent, gaOther, gaRandom, gaImport, gaImport2, gaImport3, gaReload);
+  TGameAction = (gaNew, gaCurrent, gaOther, gaRandom, gaImport, gaImport2, gaImport3, gaReload, gaSolve);
   TMoveDirection = (mdUp, mdDown, mdLeft, mdRight);
   TBehaviour = (bhSynchro, bhAsynchro);
   TRulerArea = (raNone, raBoth, raGame, raEditor);
